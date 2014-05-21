@@ -1,0 +1,21 @@
+# Configuration variables for Domino instance startup
+# Tested with Ubuntu 14.04LTS + Domino 9.0.1
+
+# User and group for Domino
+SERVER_USER="notes"
+SERVER_GROUP="notes"
+
+# The simple Domino name of the instance
+INSTANCE_NAME="server1"
+
+# The location of the server binary
+BINARY_LOCATION="/opt/ibm/domino/bin"
+
+# Where does the data go
+DATA_LOCATION="/local/notesdata"
+
+# Must exist and have chown 0400 SERVER_USER:SERVER_GROUP and include the password in clear text for the server ID:
+PWD_LOCATION="${DATA_LOCATION}/.domino.pwd"
+
+# Log file. If multiple instances is used, this must be unique
+LOG_TO="/var/log/domino_${INSTANCE_NAME}.log"
